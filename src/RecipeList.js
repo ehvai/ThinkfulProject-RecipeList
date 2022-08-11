@@ -5,7 +5,6 @@ function RecipeList({ deleteRecipe, recipes }) {
     ({ name, cuisine, photo, ingredients, preparation }, index) => {
       if (recipes.length > 0) {
         return (
-          <tbody>
             <tr key={index}>
               <td>{name}</td>
               <td>{cuisine}</td>
@@ -20,7 +19,6 @@ function RecipeList({ deleteRecipe, recipes }) {
                 </button>
               </td>
             </tr>
-          </tbody>
         );
       } else {
         return null;
@@ -57,7 +55,9 @@ function RecipeList({ deleteRecipe, recipes }) {
             </th>
           </tr>
         </thead>
+        <tbody>
         {addRecipesToList}
+        </tbody>
       </table>
     </div>
   );
