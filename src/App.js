@@ -11,9 +11,9 @@ function App() {
     setRecipes([...recipes,newRecipes])
   }
 
-  function deleteRecipe(newIndex){
-    setRecipes((recipes)=recipes.filter((index) => index !== newIndex))
-  }
+  const deleteRecipe = (newIndex) =>{
+    setRecipes((recipe)=> recipe.filter((_, index) => index !== newIndex));
+  };
 
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.

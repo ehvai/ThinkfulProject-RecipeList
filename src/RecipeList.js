@@ -5,20 +5,20 @@ function RecipeList({ deleteRecipe, recipes }) {
     ({ name, cuisine, photo, ingredients, preparation }, index) => {
       if (recipes.length > 0) {
         return (
-            <tr key={index}>
-              <td>{name}</td>
-              <td>{cuisine}</td>
-              <td>
-                <img src={photo} alt="photo of cuisine" />
-              </td>
-              <td>{ingredients}</td>
-              <td>{preparation}</td>
-              <td name="action">
-                <button name="delete" onClick={deleteRecipe}>
-                  Delete
-                </button>
-              </td>
-            </tr>
+          <tr key={index}>
+            <td>{name}</td>
+            <td>{cuisine}</td>
+            <td>
+              <img src={photo} alt={cuisine} />
+            </td>
+            <td>{ingredients}</td>
+            <td>{preparation}</td>
+            <td name="action">
+              <button name="delete" onClick={() => deleteRecipe(index)}>
+                Delete
+              </button>
+            </td>
+          </tr>
         );
       } else {
         return null;
@@ -55,9 +55,7 @@ function RecipeList({ deleteRecipe, recipes }) {
             </th>
           </tr>
         </thead>
-        <tbody>
-        {addRecipesToList}
-        </tbody>
+        <tbody>{addRecipesToList}</tbody>
       </table>
     </div>
   );
